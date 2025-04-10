@@ -25,7 +25,7 @@ function atualizarStatusLoja() {
 
     const statusElement = document.getElementById("statusLoja");
     statusElement.textContent = estaAberto ? "Aberto agora!" : "Fechado no momento!";
-    statusElement.style.color = estaAberto ? "green" : "rgb(255, 0, 0)";
+    statusElement.style.color = estaAberto ? "rgb(0, 255, 0)" : "rgb(255, 0, 0)";
 
     // Define o conteúdo do tooltip
     statusElement.setAttribute("data-bs-title",
