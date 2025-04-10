@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferragem e Instaladora Elétrica Cometa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">-->
+    <style>
+        :root {
+            /*--primary-color: #FFD700;*/
+            --primary-color: rgb(255, 255, 0);
+            /* Amarelo do banner */
+            /*--secondary-color: #C40000;*/
+            --secondary-color: rgb(255, 0, 0);
+            /* Vermelho do banner */
+            /*--dark-color: #333333;*/
+            --dark-color: rgb(0, 0, 0);
+            --light-color: #f8f9fa;
+            --accent-color: #CC9900;
+            /* Amarelo mais escuro para detalhes */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--dark-color);
+            padding: 15px 0;
+            /*display: flex;
+            justify-content: space-between;*/
+
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            max-height: 80px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar .nav-link {
+            color: var(--light-color);
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') center/cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .brand-highlight {
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .btn-cometa {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cometa:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+
+        .category-filter {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-box {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+
+        /*----------------------------------------------------*/
+        .suggestions-box {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 2000;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestions-box.show {
+            display: block;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .suggestion-item:hover {
+            background-color: var(--light-color);
+        }
+
+        .no-results {
+            padding: 10px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /*-------------------------------------------------------*/
+
+
+
+
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 10px;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background-color: var(--secondary-color);
+        }
+
+        .product-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .product-grid.active {
+            display: grid;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .carousel-section {
+            padding: 80px 0;
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        .carousel-inner {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .services-section {
+            padding: 80px 0;
+        }
+
+        /*-----------------------------------------------------------------*/
+        /* .localization-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .map-container {
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Botões flutuantes */
+        /*.map-float,
+        .waze-float {
+            position: fixed;
+            bottom: 100px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .map-float {
+            right: 100px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .waze-float {
+            right: 30px;
+            background-color: #33ccff;
+            color: white;
+        }
+
+        .map-float:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
+        }
+
+        .waze-float:hover {
+            transform: scale(1.1);
+            background-color: #1da6e0;
+        }*/
+
+        /*Segunda abordagem botões flutuantes na seção localização*/
+        .localization-section {
+            position: relative;
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .route-buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            /* Para suavizar a saída */
+        }
+
+        /*.route-buttons.visible {
+            animation: bounce-in 1s ease forwards;
+            pointer-events: auto;
+        }*/
+        .route-buttons.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+
+        .route-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            /*transform: translateY(-100px);*/
+        }
+
+        /* Animação de entrada */
+        .route-buttons.visible .route-btn {
+            animation: bounce-in 1s ease forwards;
+        }
+
+        /* Animação de saída */
+        .route-buttons:not(.visible) .route-btn {
+            animation: bounce-out 0.5s ease forwards;
+        }
+
+        .google-btn {
+            background-color: #4285F4;
+        }
+
+        .waze-btn {
+            background-color: #33CCFF;
+        }
+
+        /*@keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(20px);
+            }
+
+            80% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }*/
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(30px);
+                /* Primeiro quique mais alto */
+            }
+
+            40% {
+                transform: translateY(-20px);
+                /* Rebote para cima */
+            }
+
+            60% {
+                transform: translateY(15px);
+                /* Segundo quique menor */
+            }
+
+            80% {
+                transform: translateY(-10px);
+                /* Terceiro rebote */
+            }
+
+            90% {
+                transform: translateY(5px);
+                /* Último quique pequeno */
+            }
+
+            100% {
+                transform: translateY(0);
+                /* Repouso final */
+            }
+        }
+
+
+
+        @keyframes bounce-out {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+
+
+
+
+
+        /*--------------------------------------------------------------------*/
+        .contact-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/api/placeholder/1200/600') center/cover;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 80px;
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                margin-bottom: 20px;
+            }
+
+            .category-tab {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./image/logoVariacao.jpeg" alt="Foto do logo da Cometa"
+                    class="img-fluid" data-aos="fade-right" data-aos-duration="300" data-aos-easing="ease-out"
+                    data-aos-once="true"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#highlights">Destaques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#localization">Localização</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Bem-vindo à <span class="brand-highlight">Ferragem e Instaladora Elétrica Cometa</span></h1>
+                <p class="lead mb-4">Seu parceiro completo em materiais elétricos, ferragens e instalações profissionais
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#products" class="btn btn-cometa">Nossos Produtos</a>
+                    <a href="#contact" class="btn btn-outline-light">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Reforma e Construção de Entrada de Energia</h3>
+                        <p>Realizamos reforma e construção de padrões de entrada de energia elétrica em conformidade com
+                            as normas técnicas vigentes.</p>
+                        <a href="#contact" class="btn btn-cometa mt-3">Consultar</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h3>Projetos Elétricos</h3>
+                        <p>Desenvolvemos projetos elétricos residenciais, comerciais e industriais com equipe técnica
+                            especializada.</p>
+                        <a href="#contact" class="btn btn-cometa mt-3">Consultar</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Automação Elétrica</h3>
+                        <p>Soluções completas em automação elétrica para sua residência ou empresa, proporcionando mais
+                            conforto e economia.</p>
+                        <a href="#contact" class="btn btn-cometa mt-3">Consultar</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Execução de Rede Primária</h3>
+                        <p>Instalação e manutenção de redes primárias de energia elétrica, seguindo todas as normas de
+                            segurança e qualidade.</p>
+                        <a href="#contact" class="btn btn-cometa mt-3">Consultar</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Execução de Rede Secundária</h3>
+                        <p>Serviços completos de redes secundárias, garantindo eficiência e segurança na distribuição de
+                            energia.</p>
+                        <a href="#contact" class="btn btn-cometa mt-3">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products/Categories Section -->
+    <section id="products" class="category-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nossos Produtos</h2>
+
+            <div class="category-filter" data-aos="fade-up">
+                <input type="text" id="searchInput" class="search-box"
+                    placeholder="Pesquisar por categoria ou produto...">
+                <div id="suggestions" class="suggestions-box"></div>
+                <div class="category-tabs">
+                    <div class="category-tab active" data-category="all">Todos</div>
+                    <div class="category-tab" data-category="eletricos">Materiais Elétricos</div>
+                    <div class="category-tab" data-category="ferramentas">Ferramentas</div>
+                    <div class="category-tab" data-category="hidraulicos">Materiais Hidráulicos</div>
+                    <div class="category-tab" data-category="jardinagem">Jardinagem</div>
+                    <div class="category-tab" data-category="ferragens">Ferragens</div>
+                </div>
+            </div>
+
+            <!-- Materiais Elétricos -->
+            <div class="product-grid" id="eletricos" data-aos="fade-up">
+                <div class="product-card" data-name="cabo-flexivel">
+                    <img src="/api/placeholder/400/280" alt="Cabo Flexível" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Cabo Flexível 2,5mm²</h4>
+                        <div class="product-price">R$ 2,30/m</div>
+                        <p class="product-description">Cabo flexível para instalações elétricas residenciais e
+                            comerciais. Disponível em diversas cores.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="disjuntor">
+                    <img src="/api/placeholder/400/280" alt="Disjuntor" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Disjuntor Monopolar 20A</h4>
+                        <div class="product-price">R$ 15,90</div>
+                        <p class="product-description">Disjuntor padrão DIN para proteção de circuitos elétricos
+                            residenciais.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="luminaria">
+                    <img src="/api/placeholder/400/280" alt="Luminária" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Luminária LED Sobrepor</h4>
+                        <div class="product-price">R$ 89,90</div>
+                        <p class="product-description">Luminária de sobrepor com tecnologia LED, econômica e durável.
+                        </p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferramentas -->
+            <div class="product-grid" id="ferramentas" data-aos="fade-up">
+                <div class="product-card" data-name="alicate">
+                    <img src="/api/placeholder/400/280" alt="Alicate" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Alicate Universal 8"</h4>
+                        <div class="product-price">R$ 45,90</div>
+                        <p class="product-description">Alicate universal profissional, resistente e com cabo
+                            emborrachado.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="furadeira">
+                    <img src="/api/placeholder/400/280" alt="Furadeira" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Furadeira de Impacto 700W</h4>
+                        <div class="product-price">R$ 299,90</div>
+                        <p class="product-description">Furadeira com função impacto, ideal para concreto, madeira e
+                            metal.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="martelo">
+                    <img src="/api/placeholder/400/280" alt="Martelo" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Martelo Unha 25mm</h4>
+                        <div class="product-price">R$ 39,90</div>
+                        <p class="product-description">Martelo profissional com cabo de madeira, resistente e durável.
+                        </p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materiais Hidráulicos -->
+            <div class="product-grid" id="hidraulicos" data-aos="fade-up">
+                <div class="product-card" data-name="cano-pvc">
+                    <img src="/api/placeholder/400/280" alt="Cano PVC" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Cano PVC 25mm</h4>
+                        <div class="product-price">R$ 18,90</div>
+                        <p class="product-description">Tubo de PVC para instalações hidráulicas residenciais.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="joelho">
+                    <img src="/api/placeholder/400/280" alt="Joelho" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Joelho 90° 25mm</h4>
+                        <div class="product-price">R$ 2,50</div>
+                        <p class="product-description">Conexão tipo joelho para tubulações hidráulicas.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="torneira">
+                    <img src="/api/placeholder/400/280" alt="Torneira" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Torneira para Jardim</h4>
+                        <div class="product-price">R$ 29,90</div>
+                        <p class="product-description">Torneira resistente para uso externo em jardins.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jardinagem -->
+            <div class="product-grid" id="jardinagem" data-aos="fade-up">
+                <div class="product-card" data-name="adubo">
+                    <img src="/api/placeholder/400/280" alt="Adubo" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Adubo Orgânico 5kg</h4>
+                        <div class="product-price">R$ 24,90</div>
+                        <p class="product-description">Adubo orgânico para plantas, flores e hortas.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="mangueira">
+                    <img src="/api/placeholder/400/280" alt="Mangueira" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Mangueira 15m</h4>
+                        <div class="product-price">R$ 49,90</div>
+                        <p class="product-description">Mangueira flexível para jardim com engate rápido.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="tesoura">
+                    <img src="/api/placeholder/400/280" alt="Tesoura" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Tesoura de Poda</h4>
+                        <div class="product-price">R$ 38,90</div>
+                        <p class="product-description">Tesoura profissional para poda de plantas e arbustos.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferragens -->
+            <div class="product-grid" id="ferragens" data-aos="fade-up">
+                <div class="product-card" data-name="dobradia">
+                    <img src="/api/placeholder/400/280" alt="Dobradiça" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Dobradiça 3"</h4>
+                        <div class="product-price">R$ 15,90</div>
+                        <p class="product-description">Dobradiça de alta qualidade para portas e móveis.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="fechadura">
+                    <img src="/api/placeholder/400/280" alt="Fechadura" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Fechadura Externa</h4>
+                        <div class="product-price">R$ 89,90</div>
+                        <p class="product-description">Fechadura completa para portas externas, com chaves.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+                <div class="product-card" data-name="parafuso">
+                    <img src="/api/placeholder/400/280" alt="Parafuso" class="product-img">
+                    <div class="product-info">
+                        <h4 class="product-title">Kit Parafusos Sortidos</h4>
+                        <div class="product-price">R$ 29,90</div>
+                        <p class="product-description">Kit com parafusos de diversos tamanhos para uso geral.</p>
+                        <a href="#" class="btn btn-cometa">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Carousel -->
+    <!-- Featured Products Carousel -->
+    <section id="highlights" class="carousel-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Produtos em Destaque</h2>
+            <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
+                data-bs-wrap="true" data-bs-pause="hover" data-aos="fade-up">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active"
+                        aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/api/placeholder/1200/600" class="d-block w-100" alt="Destaque 1">
+                        <div class="carousel-caption">
+                            <h3>Kit Ferramentas 100 Peças</h3>
+                            <p>Kit completo com 100 peças para profissionais e amadores. Ideal para diversos tipos de
+                                trabalho.</p>
+                            <a href="#" class="btn btn-cometa">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/api/placeholder/1200/600" class="d-block w-100" alt="Destaque 2">
+                        <div class="carousel-caption">
+                            <h3>Painel Solar 340W</h3>
+                            <p>Economize energia com nossos painéis solares de alta eficiência. Instalação disponível.
+                            </p>
+                            <a href="#" class="btn btn-cometa">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/api/placeholder/1200/600" class="d-block w-100" alt="Destaque 3">
+                        <div class="carousel-caption">
+                            <h3>Luminária LED Inteligente</h3>
+                            <p>Iluminação moderna com controle por aplicativo e eficiência energética.</p>
+                            <a href="#" class="btn btn-cometa">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/caminho/nova-imagem.jpg" class="d-block w-100" alt="Destaque 4">
+                        <div class="carousel-caption">
+                            <h3>Transformador</h3>
+                            <p>Transformador rebaixador TD1 - 75kva</p>
+                            <a href="#" class="btn btn-cometa">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localization Section -->
+    <!--<section id="localization" class="localization-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Localização</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10" data-aos="fade-up" data-aos-delay="100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d795.5230107232175!2d-50.15233045425936!3d-30.008120428981957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95187341a22a16c3%3A0xa82af3c0d21f819d!2sferragem%20e%20instaladora%20cometa!5e0!3m2!1spt-BR!2sbr!4v1744136656324!5m2!1spt-BR!2sbr"
+                        width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- Localization Section nova -->
+    <!--<section id="localization" class="localization-section">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Nossa Localização</h2>
+            <p class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                R. Egon Hoffmeister, 399 - São Francisco, Tramandaí - RS, 95590-000
+            </p>
+            <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d795.5230107232175!2d-50.15233045425936!3d-30.008120428981957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95187341a22a16c3%3A0xa82af3c0d21f819d!2sferragem%20e%20instaladora%20cometa!5e0!3m2!1spt-BR!2sbr!4v1744136656324!5m2!1spt-BR!2sbr"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>-->
+    <!--Seção localização com efeitos dos botões flutuantes-->
+    <!-- Localization Section -->
+    <section id="localization" class="localization-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Localização</h2>
+            <div class="map-responsive" data-aos="fade-up" data-aos-delay="100">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d795.5230107232175!2d-50.15233045425936!3d-30.008120428981957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95187341a22a16c3%3A0xa82af3c0d21f819d!2sferragem%20e%20instaladora%20cometa!5e0!3m2!1spt-BR!2sbr!4v1744136656324!5m2!1spt-BR!2sbr"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Floating Buttons -->
+            <div id="route-buttons" class="route-buttons">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=R.+Egon+Hoffmeister,+399+-+São+Francisco,+Tramandaí+-+RS,+95590-000"
+                    target="_blank" class="route-btn google-btn" title="Abrir no Google Maps">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://waze.com/ul?ll=-30.0081204,-50.1523304&navigate=yes" target="_blank"
+                    class="route-btn waze-btn" title="Abrir no Waze">
+                    <i class="fab fa-waze"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Botões flutuantes de rota -->
+    <!--<a href="https://www.google.com/maps/dir/?api=1&destination=Ferragem+e+Instaladora+Cometa,+R.+Egon+Hoffmeister,+399,+Tramandaí,+RS"
+        class="map-float" target="_blank" title="Traçar rota com Google Maps">
+        <i class="fas fa-map-marked-alt"></i>
+    </a>
+
+    <a href="https://waze.com/ul?ll=-30.008120,-50.152330&navigate=yes" class="waze-float" target="_blank"
+        title="Traçar rota com Waze">
+        <i class="fab fa-waze"></i>
+    </a>-->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <div>
+                                <h5>Telefone</h5>
+                                <p>(11) 98765-4321</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp contact-icon"></i>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <p>(11) 91234-5678</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h5>E-mail</h5>
+                                <p>contato@cometaferragem.com.br</p>
+                            </div>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://facebook.com/cometaferragem" class="social-icon" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/cometaferragem" class="social-icon" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="./image/cometaIdentMimos/LOGOTIPO (COMETA).png" alt="Logo Cometa" class="footer-logo">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Serviços</a>
+                <a href="#products">Produtos</a>
+                <!--<a href="#contact">Contato</a>-->
+            </div>
+            <p>&copy; 2025 Ferragem e Instaladora Elétrica Cometa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511912345678" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>-->
+    <script src="./js/localization.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: false,
+        });
+
+        // Ajuste na lógica da navbar (exemplo)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+                // Força o AOS a reavaliar os elementos após o scroll
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 100); // Pequeno atraso para garantir que o scroll terminou
+            });
+        });
+
+
+
+        // Category Tabs and Filtering
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const productGrids = document.querySelectorAll('.product-grid');
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsBox = document.getElementById('suggestions');
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.getAttribute('data-category');
+
+                productGrids.forEach(grid => {
+                    grid.style.display = 'none';
+                    grid.querySelectorAll('.product-card').forEach(card => {
+                        card.style.display = 'block';
+                    });
+                });
+
+                if (category === 'all') {
+                    productGrids.forEach(grid => {
+                        grid.style.display = 'grid';
+                    });
+                } else {
+                    const selectedGrid = document.getElementById(category);
+                    selectedGrid.style.display = 'grid';
+                }
+
+                searchInput.value = '';
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.classList.remove('show');
+            });
+        });
+
+        // Search and Autocomplete
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase().trim();
+            if (query) {
+                showSuggestions(query);
+            } else {
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.classList.remove('show');
+                filterProducts(''); // Reset filter when input is empty
+            }
+        });
+
+        // Filter on Enter key
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.toLowerCase().trim();
+                filterProducts(query);
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.classList.remove('show');
+            }
+        });
+
+        function showSuggestions(query) {
+            suggestionsBox.innerHTML = '';
+            const allProducts = [];
+
+            productGrids.forEach(grid => {
+                grid.querySelectorAll('.product-card').forEach(card => {
+                    const name = card.getAttribute('data-name').toLowerCase();
+                    const title = card.querySelector('.product-title').textContent.toLowerCase();
+                    if (name.includes(query) || title.includes(query)) {
+                        allProducts.push({
+                            title: card.querySelector('.product-title').textContent,
+                            card: card
+                        });
+                    }
+                });
+            });
+
+            if (allProducts.length > 0) {
+                allProducts.forEach(product => {
+                    const suggestion = document.createElement('div');
+                    suggestion.classList.add('suggestion-item');
+                    suggestion.textContent = product.title;
+                    suggestion.addEventListener('click', () => {
+                        filterSpecificProduct(product.title);
+                        suggestionsBox.innerHTML = '';
+                        suggestionsBox.classList.remove('show');
+                        searchInput.value = product.title;
+                    });
+                    suggestionsBox.appendChild(suggestion);
+                });
+                suggestionsBox.classList.add('show');
+            } else {
+                const noResult = document.createElement('div');
+                noResult.classList.add('no-results');
+                noResult.textContent = 'Produto não localizado no site! Entre em contato conosco para ver a disponibilidade!';
+                suggestionsBox.appendChild(noResult);
+                suggestionsBox.classList.add('show');
+            }
+        }
+
+        function filterProducts(query) {
+            let hasMatches = false;
+            productGrids.forEach(grid => {
+                const products = grid.querySelectorAll('.product-card');
+                let hasVisibleProducts = false;
+
+                products.forEach(product => {
+                    const name = product.getAttribute('data-name').toLowerCase();
+                    const title = product.querySelector('.product-title').textContent.toLowerCase();
+                    if (name.includes(query) || title.includes(query)) {
+                        product.style.display = 'block';
+                        hasVisibleProducts = true;
+                        hasMatches = true;
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+
+                grid.style.display = hasVisibleProducts ? 'grid' : 'none';
+            });
+
+            if (query && !hasMatches) {
+                suggestionsBox.innerHTML = '<div class="no-results">Produto não localizado no site! Entre em contato conosco para ver a disponibilidade!</div>';
+                suggestionsBox.classList.add('show');
+            }
+
+            if (query) {
+                categoryTabs.forEach(tab => tab.classList.remove('active'));
+                categoryTabs[0].classList.add('active');
+            }
+        }
+
+        function filterSpecificProduct(title) {
+            productGrids.forEach(grid => {
+                const products = grid.querySelectorAll('.product-card');
+                let hasVisibleProducts = false;
+
+                products.forEach(product => {
+                    const productTitle = product.querySelector('.product-title').textContent;
+                    if (productTitle === title) {
+                        product.style.display = 'block';
+                        hasVisibleProducts = true;
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+
+                grid.style.display = hasVisibleProducts ? 'grid' : 'none';
+            });
+        }
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Back to Top Button Visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Sort Product Cards Alphabetically
+        productGrids.forEach(grid => {
+            const cards = Array.from(grid.querySelectorAll('.product-card'));
+            cards.sort((a, b) => {
+                const titleA = a.querySelector('.product-title').textContent.toLowerCase();
+                const titleB = b.querySelector('.product-title').textContent.toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+            cards.forEach(card => grid.appendChild(card));
+        });
+
+        // Smooth Scroll for Navbar Links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set initial state (show all grids)
+        productGrids.forEach(grid => {
+            grid.style.display = 'grid';
+        });
+    </script>
+</body>
+
+</html>
