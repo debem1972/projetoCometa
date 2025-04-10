@@ -668,6 +668,34 @@ footer {
     color: var(--primary-color);
 }
 
+/*---------------------------------------------------------------*
+/*Estilização do tooltip*/
+/* Personaliza o fundo do tooltip */
+.tooltip-inner {
+    background-color: rgb(255, 255, 0) !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+/* Personaliza a seta do tooltip (opcional, para combinar com o fundo) */
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: rgb(255, 255, 0) !important;
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: rgb(255, 255, 0) !important;
+}
+
+.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: rgb(255, 255, 0) !important;
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: rgb(255, 255, 0) !important;
+}
+
+/*-----------------------------------------------------------------------*/
+
+
 .back-to-top {
     position: fixed;
     bottom: 30px;
