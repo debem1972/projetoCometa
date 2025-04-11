@@ -52,13 +52,7 @@ body {
     color: var(--primary-color);
 }
 
-/*.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') center/cover;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-}*/
+
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../image/fachadaCometaLoja.jpeg') center/cover no-repeat;
     min-height: 80vh;
@@ -84,12 +78,24 @@ body {
     color: var(--primary-color);
 }
 
-.section-title {
+/*-----------------------------------------*/
+/*Sections #services, #products e #localization quanto ao estilo*/
+.services-section,
+.category-section,
+.localization-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+
+/*-----------------------------------------*/
+
+/*.section-title {
     position: relative;
     margin-bottom: 50px;
     text-align: center;
     font-weight: 700;
-}
+}*/
 
 .section-title::after {
     content: '';
@@ -102,6 +108,10 @@ body {
     background-color: var(--secondary-color);
 }
 
+/*----------------------------------------------------*/
+
+
+/*---------------------------------------------------*/
 .service-card {
     background-color: white;
     border-radius: 10px;
@@ -150,10 +160,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.category-section {
-    background-color: var(--light-color);
-    padding: 80px 0;
-}
+
 
 .category-filter {
     margin-bottom: 40px;
@@ -170,15 +177,7 @@ body {
     /* Centraliza */
 }
 
-/*.search-box {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    display: block;
-}*/
+
 .search-box {
     width: 100%;
     padding: 10px 10px 10px 35px;
@@ -214,22 +213,7 @@ body {
 
 
 /*----------------------------------------------------*/
-/*.suggestions-box {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 500px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 2000;
-    display: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}*/
+
 .suggestions-box {
     position: absolute;
     top: 100%;
@@ -310,9 +294,7 @@ body {
     margin-top: 30px;
 }
 
-/*.product-grid.active {
-            display: grid;
-        }*/
+
 
 .product-card {
     background-color: white;
@@ -398,69 +380,11 @@ body {
     /* Remove o posicionamento absoluto */
 }
 
-.services-section {
-    padding: 80px 0;
-}
+
 
 /*-----------------------------------------------------------------*/
-/* .localization-section {
-            padding: 80px 0;
-            background-color: var(--light-color);
-        }
 
-        .map-container {
-            max-width: 100%;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Botões flutuantes */
-/*.map-float,
-        .waze-float {
-            position: fixed;
-            bottom: 100px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .map-float {
-            right: 100px;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .waze-float {
-            right: 30px;
-            background-color: #33ccff;
-            color: white;
-        }
-
-        .map-float:hover {
-            transform: scale(1.1);
-            background-color: var(--accent-color);
-        }
-
-        .waze-float:hover {
-            transform: scale(1.1);
-            background-color: #1da6e0;
-        }*/
-
-/*Segunda abordagem botões flutuantes na seção localização*/
-.localization-section {
-    position: relative;
-    padding: 80px 0;
-    background-color: var(--light-color);
-}
-
+/*Botões flutuantes na seção localização*/
 .route-buttons {
     position: absolute;
     bottom: 20px;
@@ -473,10 +397,7 @@ body {
     /* Para suavizar a saída */
 }
 
-/*.route-buttons.visible {
-            animation: bounce-in 1s ease forwards;
-            pointer-events: auto;
-        }*/
+
 .route-buttons.visible {
     opacity: 1;
     pointer-events: auto;
@@ -515,25 +436,7 @@ body {
     background-color: #33CCFF;
 }
 
-/*@keyframes bounce-in {
-            0% {
-                opacity: 0;
-                transform: translateY(-100px);
-            }
 
-            60% {
-                opacity: 1;
-                transform: translateY(20px);
-            }
-
-            80% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }*/
 @keyframes bounce-in {
     0% {
         opacity: 0;
@@ -586,61 +489,126 @@ body {
     }
 }
 
-
-
-
-
-/*--------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*Section contatos */
 .contact-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/api/placeholder/1200/600') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/api/placeholder/1200/600') center/cover;
     padding: 80px 0;
     color: white;
+    min-height: 500px;
 }
 
-.contact-info {
-    background-color: var(--cinza-color);
-    padding: 30px;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+.section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.contact-method {
+/* Estilização dos títulos nas seções com fundo claro */
+.services-section .section-title,
+.category-section .section-title,
+.localization-section .section-title {
+    color: var(--secondary-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.icon-container {
+    position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-.contact-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-right: 20px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.social-icon {
-    background-color: var(--secondary-color);
-    color: white;
-    width: 50px;
-    height: 50px;
+.icon-circle {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    background-color: #e74c3c;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle i {
+    color: white;
+    font-size: 24px;
     transition: all 0.3s ease;
 }
 
-.social-icon:hover {
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-    transform: translateY(-5px);
+.icon-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.icon-circle:hover i {
+    color: #ffeb3b;
+}
+
+.service-name {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0 20px;
+    border-radius: 0 30px 30px 0;
+    z-index: 1;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    height: 60px;
+    transform-origin: left;
+    position: absolute;
+    left: 45px;
+}
+
+.service-name.active {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.service-name a,
+.service-name button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.service-name a:hover,
+.service-name button:hover {
+    color: rgb(255, 255, 0);
+    text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+}
+
+/*-----------------------------------------------------------------*/
 footer {
     background-color: var(--dark-color);
     color: var(--light-color);
@@ -720,28 +688,7 @@ footer {
     opacity: 1;
 }
 
-/*.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    z-index: 999;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}*/
 
 @media (max-width: 768px) {
     .hero-content h1 {

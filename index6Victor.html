@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
@@ -407,43 +408,55 @@
     </section>
 
 
-    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="contact-info">
-                        <div class="contact-method">
-                            <i class="fas fa-phone-alt contact-icon"></i>
-                            <div>
-                                <h5>Telefone</h5>
-                                <p>(51) 98680-0866</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-whatsapp contact-icon"></i>
-                            <div>
-                                <h5>WhatsApp</h5>
-                                <p>(51) 98680-0866</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-envelope contact-icon"></i>
-                            <div>
-                                <h5>E-mail</h5>
-                                <p>contato@cometaferragem.com.br</p>
-                            </div>
-                        </div>
-                        <div class="social-icons">
-                            <a href="https://facebook.com/" class="social-icon" target="_blank">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://instagram.com/ferrageminstaladoracometa" class="social-icon"
-                                target="_blank">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-icons">
+                <!-- Telefone -->
+                <div class="icon-container">
+                    <div class="icon-circle" data-service="phone">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="service-name" id="phone-service">
+                        <button onclick="callPhone()">Ligar para (51) 98680-0866</button>
+                    </div>
+                </div>
+                <!-- WhatsApp -->
+                <div class="icon-container">
+                    <div class="icon-circle" data-service="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="service-name" id="whatsapp-service">
+                        <a href="https://wa.me/5551986800866" target="_blank">Enviar mensagem no WhatsApp</a>
+                    </div>
+                </div>
+                <!-- E-mail -->
+                <div class="icon-container">
+                    <div class="icon-circle" data-service="email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="service-name" id="email-service">
+                        <button onclick="copyEmail()">Copiar contato@cometaferragem.com.br</button>
+                    </div>
+                </div>
+                <!-- Facebook -->
+                <div class="icon-container">
+                    <div class="icon-circle" data-service="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="service-name" id="facebook-service">
+                        <a href="https://facebook.com/profile.php?id=100084950803190" target="_blank"
+                            aria-label="Facebook">Visitar perfil no Facebook</a>
+                    </div>
+                </div>
+                <!-- Instagram -->
+                <div class="icon-container">
+                    <div class="icon-circle" data-service="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="service-name" id="instagram-service">
+                        <a href="https://instagram.com/ferrageminstaladoracometa" target="_blank">Seguir no
+                            Instagram</a>
                     </div>
                 </div>
             </div>
@@ -485,6 +498,7 @@
     <script src="./js/localization.js"></script>
     <script src="./js/statusLoja.js"></script>
     <script src="./js/ativaMensagem.js"></script>
+    <script src="./js/contacts.js"></script>
 
 </body>
 
