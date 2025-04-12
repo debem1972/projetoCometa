@@ -1,3 +1,10 @@
+/* Adicionar no início ou após as variáveis em :root */
+[id] {
+    scroll-margin-top: 100px;
+    /* Ajusta o ponto de ancoragem para todas as seções com id */
+}
+
+
 :root {
     /*--primary-color: #FFD700;*/
     --primary-color: rgb(255, 255, 0);
