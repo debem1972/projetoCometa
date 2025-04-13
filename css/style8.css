@@ -513,7 +513,7 @@ body {
 }
 
 /* Estilização dos títulos nas seções com fundo claro */
-/*.services-section .section-title,*/
+.services-section .section-title,
 .category-section .section-title,
 .localization-section .section-title {
     color: var(--secondary-color);
