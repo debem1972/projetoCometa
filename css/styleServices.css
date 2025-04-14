@@ -12,7 +12,6 @@
     padding: 80px 0;
     background-color: var(--cometa-light);
     position: relative;
-    /*overflow: hidden;*/
 }
 
 #services::before {
