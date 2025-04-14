@@ -18,6 +18,11 @@
     --accent-color: #CC9900;
     /* Amarelo mais escuro para detalhes */
     --cinza-color: rgba(255, 255, 255, 0.1);
+    --cometa-red: #e60000;
+    --cometa-dark-red: #b30000;
+    --cometa-yellow: #ffc107;
+    --cometa-dark: #212529;
+    --cometa-light: #f8f9fa;
 }
 
 body {
@@ -87,7 +92,7 @@ body {
 
 /*-----------------------------------------*/
 /*Sections #services, #products e #localization quanto ao estilo*/
-/*.services-section,*/
+.services-section,
 .category-section,
 .localization-section {
     padding: 80px 0;
@@ -95,9 +100,162 @@ body {
     position: relative;
 }
 
+/*-------------------------------------------------------------------*/
+/*Estilos da section #services*/
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+    border-bottom: 4px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--cometa-yellow);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--cometa-red);
+    opacity: 0.05;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.service-card:hover::after {
+    height: 100%;
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--cometa-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--cometa-yellow);
+    color: var(--cometa-dark);
+    transform: rotateY(180deg);
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--cometa-dark);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-title {
+    color: var(--cometa-red);
+}
+
+.service-description {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--cometa-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.service-btn i {
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-btn {
+    color: var(--cometa-dark);
+}
+
+.service-card:hover .service-btn i {
+    transform: translateX(5px);
+}
+
+/* Pulse animation for the CTA button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(230, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(230, 0, 0, 0);
+    }
+}
+
+.cta-button {
+    background-color: var(--cometa-red);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: var(--cometa-dark-red);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.2);
+    animation: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
 
 
-/*-----------------------------------------*/
+
+/*-------------------------------------------------------------------*/
 
 
 
@@ -115,37 +273,6 @@ body {
 /*----------------------------------------------------*/
 
 
-/*---------------------------------------------------*/
-/*.service-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 30px;
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-icon {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}*/
-
-/*.flaticon-icon {
-    width: 50px;
-    /* Tamanho inicial, ajuste conforme o design */
-/* height: 50px;
-    object-fit: contain;
-    /* Mantém a proporção do ícone */
-/*filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-    /* Azul, por exemplo */
-/*}*/
 
 .btn-cometa {
     background-color: var(--secondary-color);
@@ -568,7 +695,7 @@ body {
     color: #ffeb3b;
 }
 
-.service-name {
+/*.service-name {
     background-color: #e74c3c;
     color: white;
     padding: 0 20px;
@@ -610,7 +737,7 @@ body {
 .service-name button:hover {
     color: rgb(255, 255, 0);
     text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
-}
+}*/
 
 /*-----------------------------------------------------------------*/
 footer {
@@ -699,9 +826,6 @@ footer {
         font-size: 2rem;
     }
 
-    .service-card {
-        margin-bottom: 20px;
-    }
 
     .category-tab {
         padding: 8px 15px;
