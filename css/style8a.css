@@ -474,6 +474,12 @@ body {
     margin-bottom: 20px;
 }
 
+.category-tab.belongsTo {
+    background-color: var(--secondary-color);
+}
+
+/*------------------------------------------------------------------*/
+
 .carousel-section {
     padding: 80px 0;
     background-color: var(--dark-color);
