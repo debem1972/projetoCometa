@@ -425,6 +425,8 @@ body {
     margin-top: 30px;
 }
 
+/*Breakpoint*/
+/*Ajusta para 4 cards por linha em telas iguais ou superiores a 992px de largura(contempla tablets maiores e notebooks)*/
 @media (min-width: 992px) {
     .product-grid {
         grid-template-columns: repeat(4, 1fr);
