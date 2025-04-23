@@ -425,7 +425,11 @@ body {
     margin-top: 30px;
 }
 
-
+@media (min-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 .product-card {
     background-color: white;
@@ -695,49 +699,7 @@ body {
     color: #ffeb3b;
 }
 
-/*.service-name {
-    background-color: #e74c3c;
-    color: white;
-    padding: 0 20px;
-    border-radius: 0 30px 30px 0;
-    z-index: 1;
-    transform: scaleX(0);
-    opacity: 0;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    display: flex;
-    align-items: center;
-    height: 60px;
-    transform-origin: left;
-    position: absolute;
-    left: 45px;
-}
 
-.service-name.active {
-    transform: scaleX(1);
-    opacity: 1;
-}
-
-.service-name a,
-.service-name button {
-    color: white;
-    text-decoration: none;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 500;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.service-name a:hover,
-.service-name button:hover {
-    color: rgb(255, 255, 0);
-    text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
-}*/
 
 /*-----------------------------------------------------------------*/
 footer {
