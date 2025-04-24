@@ -207,7 +207,7 @@ productGrids.forEach(grid => {
 
 
 //lógica do modal
-// Adiciona evento de clique em cada botão "Ver mais"
+// Adiciona evento de clique em cada botão "Detalhes"
 function openProductModal(button) {
     const card = button.closest('.product-card');
     const modal = document.getElementById('productModal');
@@ -241,7 +241,7 @@ function openProductModal(button) {
     }
 
     // Configurar link do WhatsApp
-    const whatsappNumber = '+5551996800866'; // Substitua pelo número real
+    const whatsappNumber = '+5551986800866'; // Substitua pelo número real
     const whatsappMessage = `Olá, estou interessado no ${title}! Pode me dar mais detalhes?`;
     modalWhatsapp.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
