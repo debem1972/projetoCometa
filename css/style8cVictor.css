@@ -439,8 +439,16 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+    /*perspective: 1000px;*/
 }
+
+/*.product-img-container {
+    overflow: visible;*/
+/* Permite que a imagem "saia" do card */
+/* position: relative;
+    transform-style: preserve-3d;*/
+/* Necessário para o efeito 3D */
+/*}*/
 
 .product-card:hover {
     transform: translateY(-5px);
@@ -451,7 +459,19 @@ body {
     width: 100%;
     height: 200px;
     object-fit: contain;
+    /*transition: transform 0.5s ease, filter 0.3s ease;*/
+    /* Suaviza transformações */
+    /*transform-style: preserve-3d;*/
+    /* Suporte para inclinação 3D */
 }
+
+/* Efeito adicional no hover, inspirado no exemplo */
+/*.product-card:hover .product-img {
+    transform: translate3d(0, 0, 50px);*/
+/* Imagem "sai" levemente para frente */
+/*filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));*/
+/* Sombra para profundidade */
+/*}*/
 
 
 
