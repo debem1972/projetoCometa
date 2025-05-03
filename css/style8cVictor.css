@@ -549,6 +549,12 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 5px;
+    object-fit: contain;
+    /* Garante que a imagem mantenha o aspect ratio */
+    width: 100%;
+    /* Faz a imagem ocupar o espaço disponível até o max-width */
+    display: block;
+    /* Evita problemas de alinhamento em flexbox */
 }
 
 .modal-info {
