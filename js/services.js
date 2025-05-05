@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: `
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="/api/placeholder/400/300" alt="Manutenção Elétrica" class="img-fluid rounded mb-4">
+                        <img src="./image/servicos/manutEletrica/manutEletrica2.png" alt="Manutenção Elétrica" class="img-fluid rounded mb-4">
                     </div>
                     <div class="col-md-7">
                         <h4 class="mb-3" style="color: #e60000;">Manutenção Elétrica Profissional</h4>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: `
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="/api/placeholder/400/300" alt="Redes Elétricas" class="img-fluid rounded mb-4">
+                        <img src="./image/servicos/projExecRede/projExecRede.png" alt="Redes Elétricas" class="img-fluid rounded mb-4">
                     </div>
                     <div class="col-md-7">
                         <h4 class="mb-3" style="color: #e60000;">Projeto, Execução e Manutenção de Redes</h4>
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: `
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="/api/placeholder/400/300" alt="Transformadores" class="img-fluid rounded mb-4">
+                        <img src="./image/servicos/manutTr/manutTr1.png" alt="Transformadores" class="img-fluid rounded mb-4">
                     </div>
                     <div class="col-md-7">
                         <h4 class="mb-3" style="color: #e60000;">Serviços Especializados em Transformadores</h4>

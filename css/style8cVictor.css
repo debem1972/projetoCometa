@@ -231,6 +231,7 @@ body {
 
 .cta-button:hover {
     background-color: var(--cometa-dark-red);
+    color: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(230, 0, 0, 0.2);
     animation: none;
