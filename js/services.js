@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: `
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="/api/placeholder/400/300" alt="Entrada de Energia" class="img-fluid rounded mb-4">
+                        <img src="./image/servicos/entradaDeEnergia/entradaEnergiaMonoCometa.png" alt="Entrada de Energia" class="img-fluid rounded mb-4">
                     </div>
                     <div class="col-md-7">
                         <h4 class="mb-3" style="color: #e60000;">Construção e Reforma de Entrada de Energia</h4>
@@ -31,17 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="row">
                         <div class="col-md-6">
                             <ul>
-                                <li>Análise e dimensionamento de carga</li>
-                                <li>Projeto e documentação</li>
-                                <li>Instalação de postes e caixas</li>
-                                <li>Montagem de quadros de distribuição</li>
+                                <li>Análise e dimensionamento de carga;</li>
+                                <li>Projeto e documentação(para os casos específicos);</li>
+                                <li>Instalação de postes e caixas;</li>
+                                <li>Montagem de quadros de distribuição;</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul>
-                                <li>Instalação de disjuntores e dispositivos de proteção</li>
-                                <li>Aterramento conforme normas</li>
-                                <li>Acompanhamento junto à concessionária</li>
+                                <li>Instalação de disjuntores e dispositivos de proteção;</li>
+                                <li>Aterramento conforme normas;</li>
+                                <li>Acompanhamento junto à concessionária;</li>
                             </ul>
                         </div>
                     </div>
