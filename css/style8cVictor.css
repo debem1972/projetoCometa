@@ -716,6 +716,15 @@ body {
     color: white;
 }
 
+/* Ajuste nos indicadores do carousel */
+.carousel-indicators {
+    bottom: -70px;
+    /* Move os indicadores para baixo da legenda */
+    z-index: 5;
+    /*border: #25D366 2px solid;*/
+
+}
+
 .carousel-inner {
     border-radius: 10px;
     overflow: hidden;
@@ -741,16 +750,22 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     padding: 20px;
-    position: absolute;
-    /*bottom: 20px;*/
-    /* Ajuste para não sobrepor demais */
-    /*left: 50%;
-    transform: translateX(-50%);*/
-    margin-top: 10px;
-    /* Espaço entre imagem e legenda */
+    margin-top: 5px;
     text-align: center;
     position: static;
-    /* Remove o posicionamento absoluto */
+    /*border: 2px solid yellow;*/
+}
+
+/* Ajuste no botão Ver Detalhes */
+.carousel-caption .btn-cometa {
+    margin-top: 0;
+    /* Espaço acima do botão para separá-lo do texto */
+    display: inline-block;
+    /* Garante que o botão seja tratado como bloco inline */
+    position: relative;
+    /* Para evitar sobreposição por outros elementos */
+    z-index: 10;
+    /* Garante que o botão fique acima de outros elementos */
 }
 
 
@@ -1031,4 +1046,23 @@ footer {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
+
+    /*.carousel-caption {
+        padding: 15px;
+        margin-bottom: 60px;*/
+    /* Mais espaço em telas menores */
+    /* }*/
+
+    /*.carousel-indicators {
+        bottom: -70px;*/
+    /* Ajuste fino para telas menores */
+    /*}*/
+
+    .carousel-caption .btn-cometa {
+        margin-top: 10px;
+        padding: 8px 20px;
+        /* Botão um pouco menor em telas pequenas */
+    }
+
+
 }
