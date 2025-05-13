@@ -749,7 +749,7 @@ body {
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     margin-top: 5px;
     text-align: center;
     position: static;
@@ -1047,10 +1047,30 @@ footer {
         font-size: 0.9rem;
     }
 
+    .carousel-caption h3 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Adiciona "..." se o título for longo */
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* Limita a 2 linhas */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.9rem;
+    }
+
+
+
     .carousel-caption .btn-cometa {
-        margin-top: 10px;
+        margin-top: 5px;
         padding: 8px 20px;
         /* Botão um pouco menor em telas pequenas */
+        font-size: 0.9rem;
     }
 
 
