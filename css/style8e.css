@@ -556,6 +556,7 @@ body {
     }
 }
 
+/*Estilização do modal de produtos e modal dos destaques*/
 .modal-close {
     color: #aaa;
     float: right;
@@ -604,6 +605,10 @@ body {
 
 
 #modal-title {
+    font-weight: 600;
+}
+
+#highlight-modal-title {
     font-weight: 600;
 }
 
