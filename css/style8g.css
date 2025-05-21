@@ -270,11 +270,11 @@ body {
         font-size: 2rem;
     }
 
-    .icon-circle {
+    /* .icon-circle {
         width: 50px;
         height: 50px;
         font-size: 20px;
-    }
+    }*/
 
     .service-card {
         padding: 20px;
@@ -1150,7 +1150,7 @@ body {
     transition: all 0.3s ease;
 }
 
-service-name button,
+.service-name button,
 .service-name a {
     background: none;
     border: none;
