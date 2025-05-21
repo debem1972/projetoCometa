@@ -1291,13 +1291,19 @@ footer {
         font-size: 1.2rem;
     }
 
-    .carousel-caption p {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        /* Limita a 2 linhas */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 0.9rem;
+    @media (max-width: 768px) {
+        .carousel-caption p {
+            display: -webkit-box;
+            /* Mantido para compatibilidade com WebKit */
+            -webkit-line-clamp: 2;
+            /* Prefixo para navegadores mais antigos */
+            line-clamp: 2;
+            /* Propriedade padrão para navegadores modernos */
+            -webkit-box-orient: vertical;
+            /* Mantido para compatibilidade */
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
     }
 
 
