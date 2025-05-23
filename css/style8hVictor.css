@@ -253,76 +253,6 @@ body {
     animation: none;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .contact-icons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .icon-container {
-        max-width: 100%;
-        justify-content: center;
-    }
-
-
-    .section-title h2 {
-        font-size: 2rem;
-    }
-
-    .icon-circle {
-        width: 50px;
-        height: 50px;
-        /*font-size: 20px;*/
-        aspect-ratio: 1/1;
-        /* Garante proporção quadrada */
-    }
-
-    .icon-circle i {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-    }
-
-    .service-card {
-        padding: 20px;
-    }
-
-    .service-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 24px;
-    }
-
-    .service-name {
-        font-size: 0.9rem;
-    }
-
-    .service-name button,
-    .service-name a {
-        font-size: 1rem;
-    }
-
-
-}
-
-@media (min-width: 992px) {
-    .contact-icons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .icon-container {
-        width: 45%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .icon-container {
-        width: 18%;
-    }
-}
 
 
 
@@ -1306,4 +1236,79 @@ footer {
     padding: 8px 20px;
     /* Botão um pouco menor em telas pequenas */
     font-size: 0.9rem;
+}
+
+/*  Breakpoints- Responsive styles */
+@media (max-width: 768px) {
+    .contact-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-container {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+        aspect-ratio: 1/1;
+        /* Garante proporção quadrada */
+    }
+
+    .icon-circle i {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .service-name {
+        font-size: 0.8rem;
+    }
+
+    .service-name button,
+    .service-name a {
+        font-size: 0.9rem;
+    }
+
+    .service-name button::after,
+    .service-name a::after {
+        height: 1px;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+    .contact-icons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .icon-container {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .icon-container {
+        width: 18%;
+    }
 }
