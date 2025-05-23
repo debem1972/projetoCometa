@@ -1264,7 +1264,9 @@ footer {
 
     .icon-container {
         max-width: 100%;
-        justify-content: center;
+        /*justify-content: center;*/
+        flex: 1 1 100%;
+        /* Faz com que cada ícone ocupe 100% da largura */
     }
 
 
