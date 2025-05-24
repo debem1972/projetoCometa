@@ -1,4 +1,3 @@
-/* Adicionar no início ou após as variáveis em :root */
 [id] {
     scroll-margin-top: 100px;
     /* Ajusta o ponto de ancoragem para todas as seções com id */
@@ -1256,6 +1255,7 @@ footer {
 }
 
 /*  Breakpoints- Responsive styles */
+
 @media (max-width: 768px) {
     .contact-icons {
         flex-direction: column;
@@ -1313,6 +1313,22 @@ footer {
 
 
 }
+
+/*Breakpoint específico para tablets com 768x1024*/
+@media (width: 768px) {
+    .contact-icons {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .icon-container {
+        max-width: 22%;
+        flex: 1 1 22%;
+    }
+}
+
 
 @media (min-width: 992px) {
     .contact-icons {
